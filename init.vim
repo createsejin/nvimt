@@ -1,4 +1,5 @@
 set number
+set relativenumber
 set shell=/usr/bin/zsh
 syntax on
 
