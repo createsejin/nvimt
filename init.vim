@@ -42,4 +42,5 @@ set smarttab
 
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
