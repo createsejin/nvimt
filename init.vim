@@ -14,7 +14,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 
 set hlsearch
 set incsearch
-set autochdir
+"set autochdir
 
 nnoremap <F3> :set hlsearch!<CR>
 tnoremap <C-x> <C-\><C-n>
