@@ -2,6 +2,7 @@ set number
 set relativenumber
 set shell=/usr/bin/zsh
 syntax on
+set nowrap
 
 highlight Visual guibg=grey guifg=black
 highlight Visual ctermbg=grey ctermfg=black
