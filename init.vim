@@ -6,6 +6,7 @@ highlight Visual guibg=grey guifg=black
 highlight Visual ctermbg=grey ctermfg=black
 highlight Cursor guibg=grey guifg=black
 highlight Cursor ctermbg=grey ctermfg=black
+nnoremap <esc> :noh<return><esc>
 
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
