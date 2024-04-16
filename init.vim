@@ -43,6 +43,9 @@ set shiftwidth=2 " indent size
 set expandtab " use space to instead the tab character
 set smarttab
 
+" set cursor shape change
+set -as terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[2 q'
+
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
 Plug 'christoomey/vim-tmux-navigator'
