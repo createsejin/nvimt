@@ -16,6 +16,14 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 		  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
+if exists('$TMUX')
+  let &t_SI = "\ePtmux;\e\e[5 q\e\\"
+  let &t_EI = "\ePtmux;\e\e[2 q\e\\"
+else
+  let &t_SI = "\e[5 q"
+  let &t_EI = "\e[2 q"
+endif
+
 set hlsearch
 set incsearch
 "set autochdir
@@ -42,9 +50,6 @@ set tabstop=2 " tab width
 set shiftwidth=2 " indent size
 set expandtab " use space to instead the tab character
 set smarttab
-
-" set cursor shape change
-set -as terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[2 q'
 
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
