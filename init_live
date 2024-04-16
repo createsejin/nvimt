@@ -31,15 +31,26 @@ cd .config/nvim
 git clone https://github.com/createsejin/nvimt .
 echo "nvimt git cloned."
 
-mkdir ~/.config/tmux
-cp tmux.conf ~/.config/tmux/
+cd
+ln -s -r .config/nvim/.zshrc .zshrc
+source .zshrc
+echo ".zshrc sourced."
+
+cd
+mkdir .config/tmux
+cd .config/tmux
+ln -s ~/.config/nvim/tmux.conf tmux.conf 
 echo "tmux.conf file copyed."
 
+cd
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "tpm installed"
+tmux source-file ~/.config/nvim/tmux.conf
+echo "tmux.conf sourced."
 
 timedatectl set-ntp true
 timedatectl set-timezone Asia/Seoul
 echo "timezone set."
 
 echo -e "All jobs done. \u25A0"
+echo -e "\nYou should install tmux plugin by entering tmux and press '<prefix>I'"
