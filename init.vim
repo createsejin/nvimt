@@ -34,6 +34,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" horizontal scroll
+nnoremap <M-h> 4zh
+nnoremap <M-l> 4zl
+
 " handle tab
 set tabstop=2 " tab width
 set shiftwidth=2 " indent size
@@ -43,4 +47,5 @@ set smarttab
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-obsession'
 call plug#end()
