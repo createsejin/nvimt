@@ -45,6 +45,7 @@ echo "tmux.conf file copyed."
 cd
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "tpm installed"
+
 tmux source-file ~/.config/nvim/tmux.conf
 echo "tmux.conf sourced."
 
