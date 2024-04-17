@@ -9,7 +9,7 @@ highlight Visual ctermbg=grey ctermfg=black
 highlight Cursor guibg=grey guifg=black
 highlight Cursor ctermbg=grey ctermfg=black
 nnoremap <esc> :noh<CR>
-nnoremap <F3> :set hlsearch!<CR>
+"nnoremap <F3> :set hlsearch!<CR>
 
 " cursor blinking
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
@@ -40,6 +40,45 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" argment key map
+nnoremap <F1> :argu1<CR>
+nnoremap <F2> :argu2<CR>
+nnoremap <F3> :argu3<CR>
+nnoremap <F4> :argu4<CR>
+nnoremap <F5> :argu5<CR>
+nnoremap <F6> :argu6<CR>
+nnoremap <F7> :argu7<CR>
+nnoremap <F8> :argu8<CR>
+nnoremap <F9> :argu9<CR>
+nnoremap <F10> :argu10<CR>
+nnoremap <F11> :argu11<CR>
+nnoremap <F12> :argu12<CR>
+nnoremap <F13> :argu13<CR>
+nnoremap <F14> :argu14<CR>
+nnoremap <F15> :argu15<CR>
+nnoremap <F16> :argu16<CR>
+nnoremap <F17> :argu17<CR>
+nnoremap <F18> :argu18<CR>
+nnoremap <F19> :argu19<CR>
+nnoremap <F20> :argu20<CR>
+
+" :n :N
+nnoremap <C-n> :n<CR>
+nnoremap 2<C-n> :2n<CR>
+nnoremap 3<C-n> :3n<CR>
+nnoremap 4<C-n> :4n<CR>
+nnoremap 5<C-n> :5n<CR>
+nnoremap 6<C-n> :6n<CR>
+nnoremap <C-p> :N<CR>
+nnoremap 2<C-p> :2N<CR>
+nnoremap 3<C-p> :3N<CR>
+nnoremap 4<C-p> :4N<CR>
+nnoremap 5<C-p> :5N<CR>
+nnoremap 6<C-p> :6N<CR>
+
+" goto end of the line in insert mode
+inoremap <C-e> <C-o>$
 
 " horizontal scroll
 nnoremap <M-h> 4zh
