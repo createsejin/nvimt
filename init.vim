@@ -77,6 +77,8 @@ nnoremap 4<C-p> :4N<CR>
 nnoremap 5<C-p> :5N<CR>
 nnoremap 6<C-p> :6N<CR>
 
+autocmd BufEnter * file
+
 " goto end of the line in insert mode
 inoremap <C-e> <C-o>$
 
