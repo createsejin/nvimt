@@ -41,6 +41,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" horizontal scroll
+nnoremap <M-h> 4zh
+nnoremap <M-l> 4zl
+
 " argment key map
 nnoremap <F1> :argu1<CR>
 nnoremap <F2> :argu2<CR>
@@ -64,17 +68,17 @@ nnoremap <F19> :argu19<CR>
 nnoremap <F20> :argu20<CR>
 
 " :n :N
-nnoremap <C-n> :n<CR>
-nnoremap 2<C-n> :2n<CR>
-nnoremap 3<C-n> :3n<CR>
-nnoremap 4<C-n> :4n<CR>
-nnoremap 5<C-n> :5n<CR>
-nnoremap 6<C-n> :6n<CR>
-nnoremap <C-p> :N<CR>
-nnoremap 2<C-p> :2N<CR>
-nnoremap 3<C-p> :3N<CR>
-nnoremap 4<C-p> :4N<CR>
-nnoremap 5<C-p> :5N<CR>
+nnoremap <M-n> :n<CR>
+nnoremap 2<M-n> :2n<CR>
+nnoremap 3<M-n> :3n<CR>
+nnoremap 4<M-n> :4n<CR>
+nnoremap 5<M-n> :5n<CR>
+nnoremap 6<M-n> :6n<CR>
+nnoremap <M-p> :N<CR>
+nnoremap 2<M-p> :2N<CR>
+nnoremap 3<M-p> :3N<CR>
+nnoremap 4<M-p> :4N<CR>
+nnoremap 5<M-p> :5N<CR>
 
 " argd
 nnoremap <M-d> :argd<CR>
@@ -82,15 +86,15 @@ nnoremap <M-d> :argd<CR>
 nnoremap <M-s> :args<CR>
 " arga
 nnoremap <M-a> :arga<CR>
+" last
+nnoremap <M-b> :la<CR>
+" first
+nnoremap <M-f> :fir<CR>
 
 autocmd BufEnter * file
 
 " goto end of the line in insert mode
 inoremap <C-e> <C-o>$
-
-" horizontal scroll
-nnoremap <M-h> 4zh
-nnoremap <M-l> 4zl
 
 " handle tab
 set tabstop=2 " tab width
