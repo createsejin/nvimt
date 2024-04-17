@@ -74,18 +74,29 @@ nnoremap 3<M-n> :3n<CR>
 nnoremap 4<M-n> :4n<CR>
 nnoremap 5<M-n> :5n<CR>
 nnoremap 6<M-n> :6n<CR>
+nnoremap 7<M-n> :7n<CR>
 nnoremap <M-p> :N<CR>
 nnoremap 2<M-p> :2N<CR>
 nnoremap 3<M-p> :3N<CR>
 nnoremap 4<M-p> :4N<CR>
 nnoremap 5<M-p> :5N<CR>
+nnoremap 6<M-p> :6N<CR>
+nnoremap 7<M-p> :7N<CR>
 
 " argd
 nnoremap <M-d> :argd<CR>
+" $argd
+nnoremap <M-D> :$argd<CR>
 " args
 nnoremap <M-s> :args<CR>
 " arga
 nnoremap <M-a> :arga<CR>
+" $arga
+nnoremap <M-A> :$arga<CR>
+" arge
+nnoremap <M-e> :arge 
+" $arge
+nnoremap <M-E> :$arge 
 " last
 nnoremap <M-b> :la<CR>
 " first
