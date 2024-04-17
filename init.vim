@@ -75,7 +75,13 @@ nnoremap 2<C-p> :2N<CR>
 nnoremap 3<C-p> :3N<CR>
 nnoremap 4<C-p> :4N<CR>
 nnoremap 5<C-p> :5N<CR>
-nnoremap 6<C-p> :6N<CR>
+
+" argd
+nnoremap <M-d> :argd<CR>
+" args
+nnoremap <M-s> :args<CR>
+" arga
+nnoremap <M-a> :arga<CR>
 
 autocmd BufEnter * file
 
