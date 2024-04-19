@@ -115,6 +115,8 @@ set shiftwidth=2 " indent size
 set expandtab " use space to instead the tab character
 set smarttab
 
+set statusline+=%<%f\ %h%w%m%r%{ObsessionStatus()}%=%-14.(%l,%c%V%)\ %P
+
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
 Plug 'christoomey/vim-tmux-navigator'
