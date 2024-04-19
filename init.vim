@@ -44,6 +44,8 @@ nnoremap <C-l> <C-w>l
 " horizontal scroll
 nnoremap <M-h> 4zh
 nnoremap <M-l> 4zl
+" scroll off
+set scrolloff=8
 
 " argment key map
 nnoremap <F1> :argu1<CR>
