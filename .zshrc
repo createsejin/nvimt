@@ -105,27 +105,24 @@ source $ZSH/oh-my-zsh.sh
 
 # setopt dotglob
 setopt GLOB_DOTS
+setopt EXTENDED_GLOB
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias du='du -h -a -d 1'
 alias poweroff='systemctl poweroff'
+alias reboot='systemctl reboot'
 alias rm='rm -rf'
 alias cp='cp -r'
 alias rp='realpath'
 alias rpr='realpath --relative-to=$(pwd)'
-alias cds='cd /home/bae/Documents/scripts/.scripts'
 
 alias vim=nvim
-alias vimt='nvim -u /home/bae/.config/nvimt/init.vim'
-alias tx='tmux'
+alias vimt='nvim -u ~/.config/nvimt/init.vim'
+alias tx=tmux
 
-export MANPAGER='nvim -u /home/bae/.config/nvimt/init.vim +Man!'
-export QT_QPA_PLATFORM="wayland;xcb"
+export MANPAGER='nvim -u ~/.config/nvimt/init.vim +Man!'
 export GLOB_PATTERN="**/*@(.sh|.inc|.bash|.command|.zsh|zshrc|zsh_*)"
-export XDG_CONFIG_HOME="$HOME/.config"
-
-. "$HOME/.cargo/env"
 
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -134,10 +131,11 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[4~"   end-of-line
 bindkey  "^[[3~"  delete-char
-
-export PATH="/home/bae/Documents/scripts/.scripts:$PATH"

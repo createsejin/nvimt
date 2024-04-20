@@ -115,7 +115,9 @@ set shiftwidth=2 " indent size
 set expandtab " use space to instead the tab character
 set smarttab
 
+" statusline
 set statusline+=%<%f\ %h%w%m%r%{ObsessionStatus()}%=%-14.(%l,%c%V%)\ %P
+"                             |-> Obsession Status
 
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
