@@ -48,26 +48,37 @@ nnoremap <M-l> 4zl
 set scrolloff=8
 
 " argment key map
-nnoremap <F1> :argu1<CR>
-nnoremap <F2> :argu2<CR>
-nnoremap <F3> :argu3<CR>
-nnoremap <F4> :argu4<CR>
-nnoremap <F5> :argu5<CR>
-nnoremap <F6> :argu6<CR>
-nnoremap <F7> :argu7<CR>
-nnoremap <F8> :argu8<CR>
-nnoremap <F9> :argu9<CR>
-nnoremap <F10> :argu10<CR>
-nnoremap <F11> :argu11<CR>
-nnoremap <F12> :argu12<CR>
-nnoremap <F13> :argu13<CR>
-nnoremap <F14> :argu14<CR>
-nnoremap <F15> :argu15<CR>
-nnoremap <F16> :argu16<CR>
-nnoremap <F17> :argu17<CR>
-nnoremap <F18> :argu18<CR>
-nnoremap <F19> :argu19<CR>
-nnoremap <F20> :argu20<CR>
+nnoremap g1 :argu1<CR>
+nnoremap g2 :argu2<CR>
+nnoremap gq :argu1<CR>
+nnoremap gw :argu2<CR>
+nnoremap g3 :argu3<CR>
+nnoremap g4 :argu4<CR>
+nnoremap g5 :argu5<CR>
+nnoremap g6 :argu6<CR>
+nnoremap g7 :argu7<CR>
+nnoremap g8 :argu8<CR>
+nnoremap g9 :argu9<CR>
+nnoremap g10 :argu10<CR>
+nnoremap g11 :argu11<CR>
+nnoremap g12 :argu12<CR>
+nnoremap g13 :argu13<CR>
+nnoremap g14 :argu14<CR>
+nnoremap g15 :argu15<CR>
+nnoremap g16 :argu16<CR>
+nnoremap g17 :argu17<CR>
+nnoremap g18 :argu18<CR>
+nnoremap g19 :argu19<CR>
+nnoremap g20 :argu20<CR>
+nnoremap g21 :argu21<CR>
+nnoremap g22 :argu22<CR>
+nnoremap g23 :argu23<CR>
+nnoremap g24 :argu24<CR>
+nnoremap g25 :argu25<CR>
+nnoremap g26 :argu26<CR>
+nnoremap g27 :argu27<CR>
+nnoremap g28 :argu28<CR>
+nnoremap g29 :argu29<CR>
 
 " :n :N
 nnoremap <M-n> :n<CR>
@@ -116,11 +127,10 @@ set expandtab " use space to instead the tab character
 set smarttab
 
 " statusline
-set statusline+=%<%f\ %h%w%m%r%{ObsessionStatus()}%=%-14.(%l,%c%V%)\ %P
+" set statusline+=%<%f\ %h%w%m%r%{ObsessionStatus()}%=%-14.(%l,%c%V%)\ %P
 "                             |-> Obsession Status
 
 call plug#begin()
 Plug 'lambdalisue/suda.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-obsession'
 call plug#end()
