@@ -42,8 +42,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " horizontal scroll
-nnoremap <C-S-h> 3zh
-nnoremap <C-S-l> 3zl
+nnoremap <M-h> 3zh
+nnoremap <M-l> 3zl
 " scroll off
 set scrolloff=8
 
