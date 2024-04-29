@@ -50,8 +50,6 @@ set scrolloff=8
 " argment key map
 nnoremap g1 :argu1<CR>
 nnoremap g2 :argu2<CR>
-nnoremap gq :argu1<CR>
-nnoremap gw :argu2<CR>
 nnoremap g3 :argu3<CR>
 nnoremap g4 :argu4<CR>
 nnoremap g5 :argu5<CR>
