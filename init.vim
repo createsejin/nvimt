@@ -94,12 +94,21 @@ nnoremap 5<M-p> :5N<CR>
 nnoremap 6<M-p> :6N<CR>
 nnoremap 7<M-p> :7N<CR>
 
+"@#arglist
+function! Arg_number_list()
+  let l:args = argv()
+  let l:max_len = len(len(l:args))
+  for l:i in range(len(l:args))
+    echo printf('%' . l:max_len . 'd: %s', l:i + 1, l:args[l:i])
+  endfor
+endfunction
+
 " argd
 nnoremap <M-d> :argd<CR>
 " $argd
 nnoremap <M-D> :$argd<CR>
 " args
-nnoremap <M-s> :args<CR>
+nnoremap <M-s> :call Arg_number_list()<CR>
 " arga
 nnoremap <M-a> :arga<CR>
 " $arga
