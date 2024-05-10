@@ -1,0 +1,105 @@
+#!/bin/bash
+#mount --mkdir /dev/Files/root /mnt/root
+#cd /mnt/root/
+#./init_live
+
+shopt -s dotglob
+
+if [ "$1" = "1" ]; then
+  # mount sys_back
+  echo -e "[\033[32minit_live\033[0m] mount Files/sys_back partition"
+  mount --mkdir /dev/Files/sys_back /mnt/sys_back
+  echo -e "[\033[32minit_live\033[0m] mount efi boot partition"
+  mount /dev/nvme0n1p5 /mnt/root/boot
+  echo -e "[\033[32minit_live\033[0m] mount home partition"
+  mount /dev/Files/home /mnt/root/home
+
+  cd
+  rm -rf .ssh
+  ln -s -r ../mnt/root/home/bae/.ssh .ssh
+  echo -e "[\033[32minit_live\033[0m] .ssh linked."
+  cd
+  ln -s -r ../mnt/root/home/bae/Documents/sessions se
+  echo -e "[\033[32minit_live\033[0m] vim sessions linked."
+
+  setfont ter-u18b.psf.gz -m 8859-2
+  echo -e "[\033[32minit_live\033[0m] console font set."
+
+  iwctl station wlan0 connect SK_WiFiGIGAD61C_5G --passphrase "AAL20@1984"
+  echo -e "[\033[32minit_live\033[0m] wifi connected."
+
+  echo -e "[\033[32minit_live\033[0m] Finding fastest mirror server lists."
+  echo -e "[\033[32minit_live\033[0m] This job take a lot of time. Wait for finish."
+  reflector -c "South Korea" -a 12 --sort rate \
+  --save /etc/pacman.d/mirrorlist
+  echo -e "[\033[32minit_live\033[0m] Job finished."
+
+  timedatectl set-ntp true
+  timedatectl set-timezone Asia/Seoul
+  echo -e "[\033[32minit_live\033[0m] timezone set."
+
+  pacman-key --init
+  pacman-key --populate archlinux
+  pacman -Sy neovim git zsh-syntax-highlighting zsh-autosuggestions bat xsel tree
+  echo -e "[\033[32minit_live\033[0m] neovim, git, zsh-syntax-highlighting,"
+  echo -e "zsh-autosuggestions, bat, xsel tree installed."
+
+  cd
+  mkdir -p .config/nvim
+  cd .config/nvim
+  git clone git@github.com:createsejin/nvimt.git .
+  echo -e "[\033[32minit_live\033[0m] nvimt git cloned."
+
+  /mnt/root/home/bae/Documents/scripts/.scripts/git.sh name
+  echo -e "[\033[32minit_live\033[0m] git user-name set."
+  cd /mnt/root/home/bae/Documents
+  /mnt/root/home/bae/Documents/scripts/.scripts/git.sh safe
+  cd /root/.config/nvim
+  /mnt/root/home/bae/Documents/scripts/.scripts/git.sh safe
+  echo -e "[\033[32minit_live\033[0m] git safe-directory of doc, nvim is set."
+
+  cd
+  mkdir -p .config/nvimt
+  cp -r .config/nvim/* .config/nvimt/
+  echo -e "[\033[32minit_live\033[0m] nvim -> nvimt copied."
+
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  echo -e "[\033[32minit_live\033[0m] vim-plug installed."
+
+  cd
+  mkdir -p .config/tmux
+  cd .config/tmux
+  ln -s -r ../nvim/tmux.conf tmux.conf 
+  echo -e "[\033[32minit_live\033[0m] tmux.conf file linked."
+
+  cd
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  echo -e "[\033[32minit_live\033[0m] tpm installed"
+
+  tmux source-file ~/.config/tmux/tmux.conf
+  echo -e "[\033[32minit_live\033[0m] tmux.conf sourced."
+fi
+
+if [ "$1" = "2" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  echo -e "[\033[32minit_live\033[0m] oh-my-zsh installed."
+fi
+if [ "$1" = "3" ]; then
+  cd
+  rm .oh-my-zsh/themes/xiong-chiamiov-plus.zsh-theme
+  cd .oh-my-zsh/themes
+  ln -s -r ../../.config/nvim/xiong-chiamiov-plus.zsh-theme xiong-chiamiov-plus.zsh-theme
+  echo -e "[\033[32minit_live\033[0m] my custom xiong-chiamiov-plus.zsh-theme linked."
+
+  cd
+  rm .zshrc
+  ln -s -r .config/nvim/.zshrc .zshrc
+  echo -e "[\033[32minit_live\033[0m] '.zshrc' linked."
+  echo -e "[\033[32minit_live\033[0m] All jobs done. \u25A0"
+
+  echo -e "[\033[32minit_live\033[0m] You should do 'source ~/.zshrc'"
+  echo -e "[\033[32minit_live\033[0m] You should install tmux plugins and nvim plugins inside respective programs."
+  echo -e "[\033[32minit_live\033[0m] tmux -> '<prefix>I'"
+  echo -e "[\033[32minit_live\033[0m] nvim -> ':PlugInstall'"
+fi
