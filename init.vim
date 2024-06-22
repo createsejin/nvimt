@@ -1,6 +1,6 @@
 set number
 set relativenumber
-set shell=/usr/bin/zsh
+set shell=pwsh
 syntax on
 set nowrap
 
