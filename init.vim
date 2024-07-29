@@ -94,7 +94,7 @@ nnoremap 5<M-p> :5N<CR>
 nnoremap 6<M-p> :6N<CR>
 nnoremap 7<M-p> :7N<CR>
 
-"@#arglist
+"arglist @#
 function! Arg_number_list()
   let l:args = argv()
   let l:max_len = len(len(l:args))
