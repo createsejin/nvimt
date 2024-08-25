@@ -11,6 +11,8 @@ highlight Cursor ctermbg=grey ctermfg=black
 nnoremap <esc> :noh<CR>
 "nnoremap <F3> :set hlsearch!<CR>
 
+set clipboard=unnamed
+
 " cursor blinking
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
